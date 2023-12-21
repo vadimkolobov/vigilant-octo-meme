@@ -1,0 +1,10 @@
+            ForEach(0..<10) { position in
+                Text("Number \(position)")
+                    .alignmentGuide(.leading) { _ in CGFloat(position) * -10 }
+            }
+        }
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(x)) {
+                self.currentValuePublisher.send(items[x])
+                self.passThroughPublisher.send(items[x])
+                self.basicPublisher = items[x]
+            }
